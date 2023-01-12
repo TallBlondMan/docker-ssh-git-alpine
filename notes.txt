@@ -1,0 +1,8 @@
+Nothing's wrong with me
+Nothing's wrong with me
+Nothing's wrong with me
+Nothing's wrong with me 
+
+lama:0.5 is the working image
+
+Docker secrets - to make user persistent
