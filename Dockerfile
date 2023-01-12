@@ -20,10 +20,15 @@ RUN chown -R gituser:gituser /gituser/.ssh/ \
     && chmod -R 0700 /gituser/.ssh 
 
 EXPOSE 22
-# RUN /root/.ssh/key.pub > /root/.ssh/authorized_keys \
-  #  && rm /root/.ssh/key.pub
 
-# ENTRYPOINT [ "sh", "-c", "rc-status; re-service sshd start;" ]
+# Changing permission
+ADD devops-training/ /git-repo/files/
+RUN chown gituser /git-repo \
+    && chown gituser /etc/ssh
+ 
+# Creating an empty repo
+RUN git init --bare /git-repo/devops-training.git \
+    && git config --global --add safe.directory /git-repo/files
 
 CMD rc-service sshd start \
     && tail -f
