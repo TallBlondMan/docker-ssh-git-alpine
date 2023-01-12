@@ -4,7 +4,7 @@ RUN adduser gituser --home /gituser --disabled-password \
     && passwd -u gituser  
 
 # Configuring user for ssh
-RUN apk add openrc openssh \
+RUN apk add openrc openssh git\
     && mkdir -p /gituser/.ssh \
     && chmod 0700 /gituser/.ssh \
     && ssh-keygen -A \
