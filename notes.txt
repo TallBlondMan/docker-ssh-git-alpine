@@ -7,3 +7,4 @@ lama:0.5 is the working image
 
 Docker secrets - to make user persistent
 Make so the Authorized_key will be a file required when creating Image
+Add this repo to Jenkins and try to run builds
